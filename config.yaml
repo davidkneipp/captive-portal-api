@@ -1,0 +1,18 @@
+captiveApi:
+  # Whether or not to allow unknown clients straight away. Enabling this effectively disables all captive portal database checks, except for the API itself.
+  allowUnknownClients: True
+  userPortal:
+    # URL of the User Portal which the client must authenticate with, prior to being granted network access.
+    # Must be TLS per RFC8908, and must be enabled if allowUnknownClients is False.
+    url: "https://example.org/portal.html"
+    enabled: True
+  venueInfo:
+    # URL of the Venue Information with information about the venue or network, to provide to the client after authentication.
+    # Should be TLS per RFC8908.
+    url: "https://exampleVenue.org/info.html"
+    enabled: False
+  logging:
+    level: DEBUG
+
+sqlite3:
+  path: "clients.db"
